@@ -1,0 +1,42 @@
+<%= form_with(model: ordr) do |form| %>
+  <% if ordr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ordr.errors.count, "error") %> prohibited this ordr from being saved:</h2>
+
+      <ul>
+        <% ordr.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :orderno %>
+    <%= form.text_field :orderno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dateoforder %>
+    <%= form.text_field :dateoforder %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billingaddress %>
+    <%= form.text_field :billingaddress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shippingaddress %>
+    <%= form.text_field :shippingaddress %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

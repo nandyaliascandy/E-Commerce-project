@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ordrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Orderno</th>
+      <th>Dateoforder</th>
+      <th>Status</th>
+      <th>Billingaddress</th>
+      <th>Shippingaddress</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordrs.each do |ordr| %>
+      <tr>
+        <td><%= ordr.orderno %></td>
+        <td><%= ordr.dateoforder %></td>
+        <td><%= ordr.status %></td>
+        <td><%= ordr.billingaddress %></td>
+        <td><%= ordr.shippingaddress %></td>
+        <td><%= link_to 'Show', ordr %></td>
+        <td><%= link_to 'Edit', edit_ordr_path(ordr) %></td>
+        <td><%= link_to 'Destroy', ordr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ordr', new_ordr_path %>
